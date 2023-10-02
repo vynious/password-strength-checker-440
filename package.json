@@ -1,0 +1,12 @@
+{
+	"name": "password-strength-checker-440",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/vynious/password-strength-checker-440.git",
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"en-dictionary": "^1.2.4",
+		"en-wordnet": "^2.0.6"
+	}
+}

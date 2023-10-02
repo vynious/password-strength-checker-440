@@ -79,7 +79,3 @@ const initializedApplication = application.start()
 
 // Exported to be used as a library
 module.exports = initializedApplication
-
-// Some basic tests
-console.log(initializedApplication.decode("H3I10 W0rLD!"))
-console.log(initializedApplication.decode("Hello World!"))
