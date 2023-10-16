@@ -6,6 +6,10 @@
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
+		"@zxcvbn-ts/core": "^3.0.4",
+		"@zxcvbn-ts/language-common": "^3.0.4",
+		"@zxcvbn-ts/language-en": "^3.0.2",
+		"@zxcvbn-ts/matcher-pwned": "^3.0.4",
 		"en-dictionary": "^1.2.4",
 		"en-wordnet": "^2.0.6"
 	}
