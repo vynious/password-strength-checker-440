@@ -1,3 +1,4 @@
+// tailwind.config.js
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -20,6 +21,16 @@ const config: Config = {
       },
       animation: {
          explode: 'explode 1s forwards',
+      },
+      // Newly added styles
+      spacing: {
+        '20': '5rem',
+      },
+      boxShadow: {
+        modal: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+      },
+      fontSize: {
+        '20': '1.25rem',
       },
     },
   },
