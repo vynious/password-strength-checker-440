@@ -39,10 +39,10 @@ export default function Home() {
 
 
   const handleButtonClick = async () => {
-    const result = await calculateStrength(password)
-    console.log(result)
+    const result = await calculateStrength(password);
+    console.log(result);
     if (result) {
-      setAnalysed(true)
+      setAnalysed(prevState => !prevState); // Toggle the analysed state
     }
   };
 
@@ -58,15 +58,17 @@ export default function Home() {
   /*
    todo: external calling to api to get the resulting strength
   */
-  const calculateStrength = async (password: string): Promise<[string, number]> => {
+  const calculateStrength = async (password: string): Promise<any> => {
     try {
-      const analysis = { strength: "strong", recommendation: "testing" }
-      setAnalysis(analysis)
-      return ["Strong", 10];
-
+      const analysis = await axios.post("http://localhost:4400/check-strength", {
+        password: password
+      });
+      setAnalysis(analysis.data.data)
+      console.log(analysis);
+      return analysis.data.data
     } catch (error) {
       console.log(error)
-      return ["error", -1];
+      return "error"
     }
   }
 

@@ -8,7 +8,8 @@ interface Position {
 
 const ExplodingIcon: React.FC = () => {
   const [positions, setPositions] = useState<Position[]>([]);
-  const totalIcons = 500; // Total number of icons you want to display
+  const [isVisible, setIsVisible] = useState(true); // New state variable
+  const totalIcons = 1000; // Total number of icons you want to display
   const duration = 2; // Duration in seconds
   const interval = duration * 1000 / totalIcons; // Calculating the interval time based on total icons and duration
 
@@ -25,6 +26,7 @@ const ExplodingIcon: React.FC = () => {
 
     const durationTimeout = setTimeout(() => {
       clearInterval(spawnInterval); // Clear interval after the specified duration
+      setIsVisible(false); // Hide the modal after the animation duration
     }, duration * 1000);
 
     return () => {
@@ -32,6 +34,8 @@ const ExplodingIcon: React.FC = () => {
       clearTimeout(durationTimeout); // Clear the timeout if the component unmounts early
     };
   }, []);
+
+  if (!isVisible) return null; // Don't render the modal if isVisible is false
 
   return (
     <div className="fixed top-0 left-0 w-screen h-screen overflow-hidden">
